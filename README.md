@@ -78,26 +78,15 @@ Efter deployment får du en URL som: `https://surfmore-gear-match.vercel.app`
 <iframe 
   src="https://din-app.vercel.app" 
   width="100%" 
-  height="800px" 
-  style="border:none;"
+  height="100vh"
+  style="border:none; display:block;"
   loading="lazy"
 ></iframe>
 ```
 
 **Vigtigt**: Erstat `https://din-app.vercel.app` med din faktiske Vercel URL.
 
-### Trin 4: Tilpas højde (valgfrit)
-
-Du kan justere højden ved at ændre `height="800px"` til det der passer bedst til dit design. Overvej at bruge `min-height` i stedet:
-
-```liquid
-<iframe 
-  src="https://din-app.vercel.app" 
-  width="100%" 
-  style="border:none; min-height: 800px; height: auto;"
-  loading="lazy"
-></iframe>
-```
+**Note**: Appen er nu konfigureret til at fylde hele højden (`100vh`) uden scrolling i sektionen. Indholdet scroller internt i appen, så det passer perfekt i Shopify-sektionen.
 
 ## 🎨 Tilpasning
 
@@ -141,3 +130,4 @@ Appen er fuldt responsiv og virker på:
 ## 📄 License
 
 Privat projekt for Surfmore.dk
+npm run dev
