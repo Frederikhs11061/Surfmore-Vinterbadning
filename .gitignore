@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# shopify theme
+/shopify-theme/
+# shopify.theme.toml - Keep config file, but ignore theme files

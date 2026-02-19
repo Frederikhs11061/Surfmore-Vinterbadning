@@ -1,0 +1,13 @@
+# Shopify Theme Configuration
+# This file configures your Shopify theme development environment
+
+[development]
+store = "frederikhoegh.myshopify.com"
+theme_id = ""  # Will be set automatically when you run shopify theme dev
+ignore_files = [
+  "config/settings_data.json"
+]
+
+[production]
+store = "frederikhoegh.myshopify.com"
+theme_id = ""  # Set this to your live theme ID if you want to push directly

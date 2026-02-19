@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "shopify:auth": "shopify auth login --store frederikhoegh.myshopify.com",
+    "shopify:list": "shopify theme list --store frederikhoegh.myshopify.com",
+    "shopify:pull": "shopify theme pull --store frederikhoegh.myshopify.com --path ./shopify-theme",
+    "shopify:push": "shopify theme push --store frederikhoegh.myshopify.com --path ./shopify-theme",
+    "shopify:dev": "shopify theme dev --store frederikhoegh.myshopify.com --path ./shopify-theme",
+    "shopify:info": "shopify theme info --store frederikhoegh.myshopify.com"
   },
   "dependencies": {
     "react": "^18.3.1",
