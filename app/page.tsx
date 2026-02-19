@@ -5,8 +5,8 @@ import GearMatchConfigurator from '@/components/GearMatchConfigurator';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-surfmore-light via-white to-surfmore-light">
-      <div className="container mx-auto px-4 py-8">
+    <main className="h-screen w-full bg-white overflow-hidden">
+      <div className="h-full w-full overflow-y-auto">
         <GearMatchConfigurator />
       </div>
     </main>
