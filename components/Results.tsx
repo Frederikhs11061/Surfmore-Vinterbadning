@@ -14,7 +14,7 @@ export default function Results({ products, onRestart }: ResultsProps) {
   return (
     <div className="h-full w-full flex flex-col bg-white">
       {/* Header */}
-      <div className="text-center pt-6 pb-4 px-4 flex-shrink-0">
+      <div className="text-center pt-4 pb-3 px-4 flex-shrink-0">
         <h1 className="text-2xl md:text-3xl font-bold text-surfmore-navy mb-1 tracking-tight">
           🎯 Dit personlige udstyr
         </h1>
@@ -23,7 +23,7 @@ export default function Results({ products, onRestart }: ResultsProps) {
         </p>
       </div>
 
-      {/* Content - Fills remaining space */}
+      {/* Content - Fills remaining space dynamically */}
       <div className="flex-1 min-h-0 overflow-y-auto px-4 pb-4">
         <div className="max-w-4xl mx-auto">
           {/* Essential Products */}

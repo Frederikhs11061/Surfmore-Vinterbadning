@@ -226,16 +226,16 @@ export default function GearMatchConfigurator() {
   return (
     <div className="h-full w-full flex flex-col bg-white">
       {/* Header */}
-      <div className="text-center pt-6 pb-4 px-4 flex-shrink-0">
+      <div className="text-center pt-4 pb-3 px-4 flex-shrink-0">
         <h1 className="text-2xl md:text-3xl font-bold text-surfmore-navy mb-1 tracking-tight">
           🌊 Surfmore Gear Match
         </h1>
-        <p className="text-base md:text-lg text-gray-700 mb-3 font-medium">
+        <p className="text-base md:text-lg text-gray-700 mb-2 font-medium">
           Hvad skal jeg bruge til vinterbadning?
         </p>
         
         {/* Progress bar */}
-        <div className="w-full max-w-md mx-auto bg-gray-100 rounded-full h-1.5 mb-2">
+        <div className="w-full max-w-md mx-auto bg-gray-100 rounded-full h-1.5 mb-1.5">
           <div
             className="bg-surfmore-blue h-1.5 rounded-full transition-all duration-300"
             style={{ width: `${progress}%` }}
@@ -246,20 +246,18 @@ export default function GearMatchConfigurator() {
         </p>
       </div>
 
-      {/* Quiz Step - Flex grow to fill remaining space */}
-      <div className="flex-1 flex items-center justify-center px-4 pb-4 min-h-0">
-        <div className="w-full max-w-4xl h-full flex flex-col">
-          <div className="flex-1 flex items-center justify-center min-h-0">
-            <QuizStep
-              question={currentQuestion}
-              answer={getCurrentAnswer()}
-              onAnswer={handleAnswer}
-              onNext={handleNext}
-              onBack={handleBack}
-              isFirst={currentStep === 0}
-              isLast={currentStep === questions.length - 1}
-            />
-          </div>
+      {/* Quiz Step - Fills remaining space dynamically */}
+      <div className="flex-1 px-4 pb-4 min-h-0 flex flex-col">
+        <div className="w-full max-w-4xl mx-auto flex-1 flex flex-col justify-start pt-2">
+          <QuizStep
+            question={currentQuestion}
+            answer={getCurrentAnswer()}
+            onAnswer={handleAnswer}
+            onNext={handleNext}
+            onBack={handleBack}
+            isFirst={currentStep === 0}
+            isLast={currentStep === questions.length - 1}
+          />
         </div>
       </div>
     </div>

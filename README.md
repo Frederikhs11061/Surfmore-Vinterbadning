@@ -75,7 +75,7 @@ Efter deployment får du en URL som: `https://surfmore-gear-match.vercel.app`
 4. Indsæt følgende kode:
 
 ```liquid
-<div style="height: 800px; width: 100%;">
+<div style="height: 1000px; width: 100%;">
   <iframe 
     src="https://din-app.vercel.app" 
     width="100%" 
@@ -88,7 +88,7 @@ Efter deployment får du en URL som: `https://surfmore-gear-match.vercel.app`
 
 **Vigtigt**: Erstat `https://din-app.vercel.app` med din faktiske Vercel URL.
 
-**Note**: Appen er nu konfigureret til at fylde hele højden uden scrolling. Indholdet tilpasser sig automatisk til den tilgængelige højde. Du kan justere højden ved at ændre `height: 800px` i div'en til det der passer bedst til din sektion.
+**Note**: Appen er nu konfigureret til at fylde hele højden dynamisk uden scrolling. Indholdet tilpasser sig automatisk til den tilgængelige højde. Du kan justere højden ved at ændre `height: 1000px` i div'en til det der passer bedst til din sektion (fx 900px, 1000px, 1100px).
 
 ## 🎨 Tilpasning
 
