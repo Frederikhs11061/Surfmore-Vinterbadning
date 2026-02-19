@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { Product } from './GearMatchConfigurator';
 
 interface ResultsProps {
@@ -8,8 +9,14 @@ interface ResultsProps {
 }
 
 export default function Results({ products, onRestart }: ResultsProps) {
-  const essentialProducts = products.filter(p => p.essential);
-  const additionalProducts = products.filter(p => !p.essential);
+  const essentialProducts = useMemo(() => 
+    products.filter(p => p.essential), 
+    [products]
+  );
+  const additionalProducts = useMemo(() => 
+    products.filter(p => !p.essential), 
+    [products]
+  );
 
   return (
     <div className="h-full w-full flex flex-col bg-white">

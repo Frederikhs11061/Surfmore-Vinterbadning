@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { Question, Answer } from './GearMatchConfigurator';
 
 interface QuizStepProps {
@@ -34,19 +35,21 @@ export default function QuizStep({
     }
   };
 
-  const isSelected = (value: string) => {
-    if (question.type === 'multiple') {
-      return Array.isArray(answer) && answer.includes(value);
-    }
-    return answer === value;
-  };
+  const isSelected = useMemo(() => {
+    return (value: string) => {
+      if (question.type === 'multiple') {
+        return Array.isArray(answer) && answer.includes(value);
+      }
+      return answer === value;
+    };
+  }, [question.type, answer]);
 
-  const canProceed = () => {
+  const canProceed = useMemo(() => {
     if (question.type === 'multiple') {
       return Array.isArray(answer) && answer.length > 0;
     }
     return answer !== undefined && answer !== '';
-  };
+  }, [question.type, answer]);
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 md:p-6 w-full">
@@ -98,13 +101,13 @@ export default function QuizStep({
         >
           ← Tilbage
         </button>
-        <button
-          onClick={onNext}
-          disabled={!canProceed()}
+            <button
+              onClick={onNext}
+              disabled={!canProceed}
           className={`
             px-6 py-2 rounded-lg font-bold text-white transition-all text-sm shadow-sm
             ${
-              canProceed()
+              canProceed
                 ? 'bg-surfmore-blue hover:bg-surfmore-navy shadow-md hover:shadow-lg'
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }
