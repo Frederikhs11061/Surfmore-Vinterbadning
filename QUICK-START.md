@@ -11,8 +11,10 @@ npm run shopify:auth
 
 **Eller direkte:**
 ```bash
-shopify auth login --store frederikhoegh.myshopify.com
+shopify auth login
 ```
+
+Dette vil spørge dig om hvilken store du vil bruge efter login.
 
 Dette vil:
 - Åbne en browser

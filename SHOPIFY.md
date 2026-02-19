@@ -17,8 +17,10 @@ npm run shopify:auth
 
 Eller manuelt:
 ```bash
-shopify auth login --store frederikhoegh.myshopify.com
+shopify auth login
 ```
+
+**Note:** Den nye Shopify CLI vil spørge dig om hvilken store du vil bruge efter login. Vælg `frederikhoegh.myshopify.com`.
 
 ### 2. Se tilgængelige temaer
 
@@ -38,7 +40,7 @@ Dette henter dit aktive tema til `./shopify-theme/` mappen.
 
 **Alternativt:** Hent et specifikt tema:
 ```bash
-shopify theme pull --store frederikhoegh.myshopify.com --path ./shopify-theme --theme [THEME_ID]
+shopify theme pull --path ./shopify-theme --theme [THEME_ID]
 ```
 
 ### 4. Tilføj Gear Match sektionen

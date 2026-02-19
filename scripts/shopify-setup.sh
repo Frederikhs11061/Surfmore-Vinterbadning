@@ -5,7 +5,6 @@
 
 set -e
 
-STORE="frederikhoegh.myshopify.com"
 THEME_DIR="./shopify-theme"
 
 echo "🌊 Surfmore Shopify Theme Setup"
@@ -21,12 +20,14 @@ fi
 
 # Check if authenticated
 echo "Checking authentication..."
-if ! shopify theme list --store $STORE &> /dev/null; then
+if ! shopify theme list &> /dev/null; then
     echo "⚠️  Not authenticated. Please run:"
     echo "   npm run shopify:auth"
     echo ""
     echo "Or run this command manually:"
-    echo "   shopify auth login --store $STORE"
+    echo "   shopify auth login"
+    echo ""
+    echo "After login, select your store: frederikhoegh.myshopify.com"
     exit 1
 fi
 
@@ -35,7 +36,7 @@ echo ""
 
 # List available themes
 echo "📋 Available themes:"
-shopify theme list --store $STORE
+shopify theme list
 echo ""
 
 # Ask if user wants to pull a theme
@@ -46,10 +47,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     
     if [ -z "$THEME_ID" ]; then
         echo "Pulling development theme..."
-        shopify theme pull --store $STORE --path $THEME_DIR --development
+        shopify theme pull --path $THEME_DIR --development
     else
         echo "Pulling theme $THEME_ID..."
-        shopify theme pull --store $STORE --path $THEME_DIR --theme $THEME_ID
+        shopify theme pull --path $THEME_DIR --theme $THEME_ID
     fi
     
     echo ""
