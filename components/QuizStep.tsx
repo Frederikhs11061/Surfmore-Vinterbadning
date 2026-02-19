@@ -49,18 +49,18 @@ export default function QuizStep({
   };
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 md:p-8">
-      <h2 className="text-xl md:text-2xl font-bold text-surfmore-navy mb-6 md:mb-8 text-center tracking-tight">
+    <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 md:p-6 w-full">
+      <h2 className="text-lg md:text-xl font-bold text-surfmore-navy mb-4 md:mb-6 text-center tracking-tight">
         {question.question}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 md:mb-6">
         {question.options.map((option) => (
           <button
             key={option.value}
             onClick={() => handleOptionClick(option.value)}
             className={`
-              p-5 md:p-6 rounded-lg border-2 transition-all duration-200 text-left
+              p-4 rounded-lg border-2 transition-all duration-200 text-left
               hover:shadow-md
               ${
                 isSelected(option.value)
@@ -69,13 +69,13 @@ export default function QuizStep({
               }
             `}
           >
-            <div className="flex items-start gap-3 md:gap-4">
-              <span className="text-2xl md:text-3xl flex-shrink-0">{option.icon}</span>
-              <span className="text-base md:text-lg font-semibold text-surfmore-navy flex-1 leading-tight">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl flex-shrink-0">{option.icon}</span>
+              <span className="text-sm md:text-base font-semibold text-surfmore-navy flex-1 leading-tight">
                 {option.label}
               </span>
               {isSelected(option.value) && (
-                <span className="text-surfmore-blue text-xl md:text-2xl flex-shrink-0 font-bold">✓</span>
+                <span className="text-surfmore-blue text-xl flex-shrink-0 font-bold">✓</span>
               )}
             </div>
           </button>
@@ -83,12 +83,12 @@ export default function QuizStep({
       </div>
 
       {/* Navigation buttons */}
-      <div className="flex justify-between gap-3 md:gap-4">
+      <div className="flex justify-between gap-3">
         <button
           onClick={onBack}
           disabled={isFirst}
           className={`
-            px-5 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold transition-all text-sm md:text-base border
+            px-5 py-2 rounded-lg font-semibold transition-all text-sm border
             ${
               isFirst
                 ? 'bg-gray-50 text-gray-400 cursor-not-allowed border-gray-200'
@@ -102,7 +102,7 @@ export default function QuizStep({
           onClick={onNext}
           disabled={!canProceed()}
           className={`
-            px-6 md:px-8 py-2.5 md:py-3 rounded-lg font-bold text-white transition-all text-sm md:text-base shadow-sm
+            px-6 py-2 rounded-lg font-bold text-white transition-all text-sm shadow-sm
             ${
               canProceed()
                 ? 'bg-surfmore-blue hover:bg-surfmore-navy shadow-md hover:shadow-lg'

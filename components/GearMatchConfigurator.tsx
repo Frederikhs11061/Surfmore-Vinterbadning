@@ -226,38 +226,40 @@ export default function GearMatchConfigurator() {
   return (
     <div className="h-full w-full flex flex-col bg-white">
       {/* Header */}
-      <div className="text-center pt-8 pb-6 px-4 flex-shrink-0">
-        <h1 className="text-3xl md:text-4xl font-bold text-surfmore-navy mb-2 tracking-tight">
+      <div className="text-center pt-6 pb-4 px-4 flex-shrink-0">
+        <h1 className="text-2xl md:text-3xl font-bold text-surfmore-navy mb-1 tracking-tight">
           🌊 Surfmore Gear Match
         </h1>
-        <p className="text-lg md:text-xl text-gray-700 mb-4 font-medium">
+        <p className="text-base md:text-lg text-gray-700 mb-3 font-medium">
           Hvad skal jeg bruge til vinterbadning?
         </p>
         
         {/* Progress bar */}
-        <div className="w-full max-w-md mx-auto bg-gray-100 rounded-full h-2 mb-3">
+        <div className="w-full max-w-md mx-auto bg-gray-100 rounded-full h-1.5 mb-2">
           <div
-            className="bg-surfmore-blue h-2 rounded-full transition-all duration-300"
+            className="bg-surfmore-blue h-1.5 rounded-full transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
         </div>
-        <p className="text-sm text-gray-500 font-medium">
+        <p className="text-xs text-gray-500 font-medium">
           Spørgsmål {currentStep + 1} af {questions.length}
         </p>
       </div>
 
-      {/* Quiz Step - Flex grow to fill space */}
-      <div className="flex-1 overflow-y-auto px-4 pb-8">
-        <div className="max-w-4xl mx-auto">
-          <QuizStep
-            question={currentQuestion}
-            answer={getCurrentAnswer()}
-            onAnswer={handleAnswer}
-            onNext={handleNext}
-            onBack={handleBack}
-            isFirst={currentStep === 0}
-            isLast={currentStep === questions.length - 1}
-          />
+      {/* Quiz Step - Flex grow to fill remaining space */}
+      <div className="flex-1 flex items-center justify-center px-4 pb-4 min-h-0">
+        <div className="w-full max-w-4xl h-full flex flex-col">
+          <div className="flex-1 flex items-center justify-center min-h-0">
+            <QuizStep
+              question={currentQuestion}
+              answer={getCurrentAnswer()}
+              onAnswer={handleAnswer}
+              onNext={handleNext}
+              onBack={handleBack}
+              isFirst={currentStep === 0}
+              isLast={currentStep === questions.length - 1}
+            />
+          </div>
         </div>
       </div>
     </div>
