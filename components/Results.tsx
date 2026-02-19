@@ -31,15 +31,21 @@ export default function Results({ products, onRestart }: ResultsProps) {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {essentialProducts.map((product) => (
-            <div
+            <a
               key={product.id}
-              className="border-2 border-surfmore-blue rounded-xl p-5 bg-surfmore-light/30"
+              href={product.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-surfmore-blue rounded-xl p-5 bg-surfmore-light/30 hover:bg-surfmore-light/50 transition-all cursor-pointer group"
             >
-              <h3 className="text-xl font-semibold text-surfmore-dark mb-2">
+              <h3 className="text-xl font-semibold text-surfmore-dark mb-2 group-hover:text-surfmore-blue transition-colors">
                 {product.name}
               </h3>
-              <p className="text-gray-600">{product.description}</p>
-            </div>
+              <p className="text-gray-600 mb-2">{product.description}</p>
+              <span className="text-surfmore-blue text-sm font-medium group-hover:underline">
+                Se produkt →
+              </span>
+            </a>
           ))}
         </div>
       </div>
@@ -53,15 +59,21 @@ export default function Results({ products, onRestart }: ResultsProps) {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {additionalProducts.map((product) => (
-              <div
+              <a
                 key={product.id}
-                className="border-2 border-gray-200 rounded-xl p-5 hover:border-surfmore-blue/50 transition-colors"
+                href={product.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-gray-200 rounded-xl p-5 hover:border-surfmore-blue/50 transition-all cursor-pointer group"
               >
-                <h3 className="text-xl font-semibold text-surfmore-dark mb-2">
+                <h3 className="text-xl font-semibold text-surfmore-dark mb-2 group-hover:text-surfmore-blue transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-gray-600">{product.description}</p>
-              </div>
+                <p className="text-gray-600 mb-2">{product.description}</p>
+                <span className="text-surfmore-blue text-sm font-medium group-hover:underline">
+                  Se produkt →
+                </span>
+              </a>
             ))}
           </div>
         </div>
@@ -84,9 +96,14 @@ export default function Results({ products, onRestart }: ResultsProps) {
             ))}
           </ul>
         </div>
-        <button className="bg-white text-surfmore-blue px-8 py-3 rounded-lg font-semibold hover:bg-surfmore-light transition-colors shadow-lg">
+        <a
+          href="https://surfmore.dk/collections/vinterbadning-haandklaede-poncho"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-white text-surfmore-blue px-8 py-3 rounded-lg font-semibold hover:bg-surfmore-light transition-colors shadow-lg"
+        >
           Se Bundle →
-        </button>
+        </a>
       </div>
 
       {/* CTA Section */}

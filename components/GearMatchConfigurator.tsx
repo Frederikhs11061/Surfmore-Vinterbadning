@@ -26,6 +26,7 @@ export interface Product {
   description: string;
   category: string;
   essential: boolean;
+  url: string;
 }
 
 const questions: Question[] = [
@@ -81,6 +82,7 @@ const products: Product[] = [
     description: 'Vigtige for at holde fødderne varme og beskytte mod skarpe sten og skaller',
     category: 'footwear',
     essential: true,
+    url: 'https://surfmore.dk/collections/badesko-vinterbadning/products/surfmore-neopren-sko-3-mm',
   },
   {
     id: 'badeponcho',
@@ -88,6 +90,7 @@ const products: Product[] = [
     description: 'Hurtig omklædning og varme efter badet. Perfekt til at holde varmen',
     category: 'warmth',
     essential: true,
+    url: 'https://surfmore.dk/collections/vinterbadning-haandklaede-poncho/products/surfmore-haandklaede-poncho-bomuld',
   },
   {
     id: 'drybag',
@@ -95,6 +98,7 @@ const products: Product[] = [
     description: 'Vandtæt opbevaring til tøj, telefon og værdigenstande',
     category: 'storage',
     essential: true,
+    url: 'https://surfmore.dk/products/surfmore-drybag-10l',
   },
   {
     id: 'mikrofiberhåndklæde',
@@ -102,6 +106,7 @@ const products: Product[] = [
     description: 'Super absorberende og hurtigt tørrende. Perfekt til vinterbadning',
     category: 'dry',
     essential: true,
+    url: 'https://surfmore.dk/products/surfmore-mikrofiber-haandklaede',
   },
   {
     id: 'neopren-handsker',
@@ -109,6 +114,7 @@ const products: Product[] = [
     description: 'Hold hænderne varme i koldt vand',
     category: 'warmth',
     essential: false,
+    url: 'https://surfmore.dk/collections/vinterbadning-neopren-handsker/products/surfmore-neopren-handsker-15-mm',
   },
   {
     id: 'neopren-hue',
@@ -116,6 +122,7 @@ const products: Product[] = [
     description: 'Vigtig for at holde hovedet varmt - op til 30% af varmen går gennem hovedet',
     category: 'warmth',
     essential: false,
+    url: 'https://surfmore.dk/collections/vinterbade-hue/products/surfmore-neopren-hue-2-5mm',
   },
 ];
 
